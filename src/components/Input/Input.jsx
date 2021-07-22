@@ -1,7 +1,7 @@
-import "./Input.css"
-
 const Input = ({ size = 'medium', ...rest }) => (
-    <input className={`input ${size}`} {...rest} />
-);
+    <div class={`ui input ${size}`}>
+        <input {...rest} />
+    </div>
+)
 
-export default Input;
+export default Input
