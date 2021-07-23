@@ -2,7 +2,18 @@ import Loader from './Loader'
 
 export default {
     title: 'Components/Loader',
-    component: Loader
+    component: Loader,
+    args: {
+        isDoubleLoader: false
+    },
+    argTypes: {
+        size: {
+            control: { 
+                type: "select", 
+                options: ["small", "medium", "large"]
+            }
+        }
+    }
 }
 
 const Template = args => <Loader {...args} />

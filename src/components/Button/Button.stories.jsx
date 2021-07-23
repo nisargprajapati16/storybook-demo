@@ -3,12 +3,38 @@ import Button from './Button'
 export default {
     title: 'Components/Button',
     component: Button,
-    args: {
-        children: 'Button'
+    argTypes: {
+        variant: {
+            control: { 
+                type: "select", 
+                options: ["primary", "secondary", "green", "red"]
+            }
+        }
     }
 }
 
-export const Primary = () => <Button variant="primary">Primary</Button>
-export const Secondary = () => <Button variant="secondary">Secondary</Button>
-export const Success = () => <Button variant="green">Success</Button>
-export const Danger = () => <Button variant="red">Danger</Button>
+const Template = ({ btnText, ...args }) => <Button {...args}>{btnText}</Button>
+
+export const Primary = Template.bind({})
+Primary.args = {
+    variant: "primary",
+    btnText: "Primary"
+}
+
+export const Secondary = Template.bind({})
+Secondary.args = {
+    variant: "secondary",
+    btnText: "Secondary"
+}
+
+export const Success = Template.bind({})
+Success.args = {
+    variant: "green",
+    btnText: "Success"
+}
+
+export const Danger = Template.bind({})
+Danger.args = {
+    variant: "red",
+    btnText: "Danger"
+}
